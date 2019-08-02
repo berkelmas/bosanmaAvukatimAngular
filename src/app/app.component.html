@@ -1,0 +1,223 @@
+
+<div class="main-body-main">
+
+
+    <div [@emailSubAnimation]="'displaySubsMessage'" *ngIf="sentContactSuccess" class="sticky-message-correct">
+      <p style="font-size: 20px; color: #f7f7f8">Bültene Abone Olundu.</p>
+    </div>
+
+    <div [@emailSubAnimation]="'displaySubsMessage'" *ngIf="sentContactFailed" class="sticky-message-false">
+      <p style="font-size: 20px; color: #f7f7f8;">Abonelik İşlemi Başarısız.</p>
+    </div>
+
+  <div class="main-body">
+    <!-- header start -->
+    <header class="header">
+        <div class="header__top-area grey-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="header__top-menu top-menu-black">
+                            <ul>
+                                <li>
+                                    <a routerLink="/">Ana Sayfa </a>
+                                </li>
+                                <li>
+                                    <a routerLink="/yayinlar">Yayınlar</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/gizlilik-politikasi">Gizlilik Politikası</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__middle pt-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-3 d-flex align-items-center justify-content-md-start justify-content-center">
+                        <div class="header__logo text-center text-md-left mb-20">
+                            <a routerLink="/">
+                                <img src="assets/img/cezaavukatim-header.png" alt="Ceza Avukatım Logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__menu-area grey-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="header__right-icon header__icon-black f-right mt-17">
+                            <a>
+
+                            </a>
+                            <a class="info-bar">
+
+                            </a>
+                        </div>
+                        <div class="header__menu header__menu-black f-left">
+                            <nav id="mobile-menu" [ngClass]="{'no-display' : !navbarMobileOpen}">
+                                <ul>
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="/">Ana Sayfa</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/avukata-danisin">Avukata Danışın</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a (mouseenter)="desktopSubState= true" routerLink="/yayinlar">Uzmanlıklar</a>
+                                        <ul (mouseleave)="desktopSubState= false" *ngIf="desktopSubState" class="submenu" style="visibility: visible; background: #f7f7fd;">
+                                          <li><a routerLink="/yayinlar/hakaret/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
+                                          <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
+                                          <li><a routerLink="/yayinlar/yaralama/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
+                                          <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Uyuşturucu Madde Suçları</a></li>
+                                          <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="mobile-menu black-icon" [ngClass]="{'mean-container' : !navbarMobileOpen}">
+                          <div class="mean-bar">
+                            <a (click)="changeMenuState()" class="meanmenu-reveal" style="right:0;left:auto;border: 1px solid #666666; color: #666666;">
+                              <span style="background-color: #666666"></span><span style="background-color: #666666"></span><span style="background-color: #666666"></span>
+                            </a>
+                            <div class="margin-getir"></div>
+                            <nav class="mean-nav" *ngIf="mobileMenuOpen" [@mobileMenuAnimation]="'displayMobileMenu'">
+                              <ul>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/" style="font-size: 16px; color: #666666;">Ana Sayfa</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/avukata-danisin" style="font-size: 16px; color: #666666;">Avukata Danışın</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/hakaret/sayfa/1" style="font-size: 16px; color: #666666;">Hakaret</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/yaralama/sayfa/1" style="font-size: 16px; color: #666666;">Yaralama</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/orgutsuclari/sayfa/1" style="font-size: 16px; color: #666666;">Örgüt Suçları</a></li>
+                                  <li><a (click)="changeUzmanliklarSubMenu()" style="font-size: 16px; color: #666666;">Uzmanlıklar</a>
+                                      <ul class="submenu">
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/hakaret/sayfa/1" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/orgutsuclari/sayfa/1" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/yaralama/sayfa/1" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1" style="font-size: 16px; color: #333333;">Uyuşturucu Madde Suçları</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/beyazyakalisuclari/sayfa/1" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+                                      </ul>
+                                  <a (click)="changeUzmanliklarSubMenu()" class="mean-expand" style="font-size: 18px; color: #666666; cursor: pointer;">+</a></li>
+
+                              </ul>
+                            </nav>
+                          </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- header end -->
+
+    <main>
+      <br>
+
+        <router-outlet></router-outlet>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer-bg">
+        <div class="subscribe-area pt-100 pb-80">
+            <div class="container">
+                <div class="subscribe-separator pt-50 pb-20">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-12">
+                            <div class="footer-logo mb-30">
+                                <a routerLink="/"><img src="assets/img/cezaavukatim-footer.png" alt="Ceza Avukatım Beyaz Logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-12">
+                            <div class="row">
+                                <div class="col-xl-7 col-lg-7">
+                                    <div class="subscribe-title">
+                                        <h2>BÜLTENİMİZE ABONE OLUN</h2>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-5">
+                                    <div class="subscribe-form mb-30">
+                                        <form #f="ngForm" (submit)="handleSubmit(f)">
+                                            <input ngModel name="email" type="email" placeholder="Enter your email">
+                                            <button type="submit">
+                                                Abone Ol
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="footer-widget mb-30">
+                            <p>Cezaavukatim.com sanık,mağdur,katılan,ihbar eden ve şikayetçi gibi tarafların aralarındaki uyuşmazlıklarda öldürme,yaralama,hakaret,bilişim,hırsızlık,
+örgüt suçları ve yasak madde kullanımı gibi ceza hukukunun uzmanlık gerektiren alanlarında size destek oluyoruz.</p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="widget-box mb-30">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="footer-widget mb-30">
+                                        <h3>Uzmanlıklar</h3>
+                                        <ul>
+                                            <li><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
+                                            <li><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
+                                            <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
+                                            <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1">Uyuşturucu Madde Suçları</a></li>
+                                            <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1">Beyaz Yakalı Suçları</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="footer-widget mb-30">
+                                        <h3>Site Haritası</h3>
+                                        <ul>
+                                            <li><a routerLink="/">Ana Sayfa</a></li>
+                                            <li><a routerLink="/gizlilik-politikasi">Gizlilik Politikası</a></li>
+                                            <li><a routerLink="/avukata-danisin">Avukata Danışın</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area pt-25 pb-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright text-center">
+                            <p>© Ceza Avukatım 2018. Tüm Hakları Saklıdır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  </div>
+</div>

@@ -1,0 +1,40 @@
+// Font Family
+$poppins: 'Poppins', sans-serif;
+$opensans: 'Open Sans', sans-serif;
+
+// Colors ---------------
+$white: #ffffff;
+$black: #1c1c21;
+$black-2: #333333;
+$grey:#f7f7fd;
+$theme-color: #f70d28;
+$header-color: #cc2121;
+$header-top: #dd3333;
+$body-text-color: #666666;
+$hr-border-color:#eceff8;
+$footer-bg:#212121;
+
+
+// Heading Color
+$heading-color: #212428;
+
+// Soft color
+$black-soft:#7e7e7e;
+$black-soft-6:#666;
+
+// soft border
+$border-soft:#e9e9e9;
+
+
+// Responsive Variables
+$laptop: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1200px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$xs:'(max-width: 767px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+
+@media #{$laptop}{
+    .container {
+        max-width: 1250px;
+    }
+}

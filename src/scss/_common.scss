@@ -1,0 +1,525 @@
+/* 1. Theme default css */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700,800');
+ .main-body {
+	font-family: $opensans;
+	font-weight: normal;
+    font-style: normal;
+    color:$body-text-color;
+}
+.img,img {
+	max-width: 100%;
+	@include transition(.3s);
+}
+.f-left {
+	float: left
+}
+.f-right {
+	float: right
+}
+.fix {
+	overflow: hidden
+}
+a,
+.button {
+	@include transition(.3s);
+}
+button{
+	cursor: pointer;
+}
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+a:focus,
+a:hover
+{
+	color: inherit;
+	text-decoration: none;
+}
+a,
+button {
+	color: inherit;
+	outline: medium none;
+}
+button:focus,input:focus,input:focus,textarea,textarea:focus{outline: 0}
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $poppins;
+	font-weight: normal;
+	color: $heading-color;
+	margin-top: 0px;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: normal;
+	line-height: 1.4;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: inherit;
+}
+h1 {
+	font-size: 40px;
+	font-weight: 500;
+}
+h2 {
+	font-size: 35px;
+}
+h3 {
+	font-size: 28px;
+}
+h4 {
+	font-size: 22px;
+}
+h5 {
+	font-size: 18px;
+}
+h6 {
+	font-size: 16px;
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+li {
+	list-style: none
+}
+p {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 26px;
+	color: $body-text-color;
+	margin-bottom: 15px;
+}
+hr {
+	border-bottom: 1px solid $hr-border-color;
+	border-top: 0 none;
+	margin: 30px 0;
+	padding: 0;
+}
+label {
+	color: $black-soft;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 400;
+}
+*::-moz-selection {
+	background: $black;
+	color: $white;
+	text-shadow: none;
+}
+::-moz-selection {
+	background: $black;
+	color:$white;
+	text-shadow: none;
+}
+::selection {
+	background: $black;
+	color: $white;
+	text-shadow: none;
+}
+
+/*--
+    - Input Placeholder
+-----------------------------------------*/
+*::-moz-placeholder {
+	color: $black;
+	font-size: 14px;
+	opacity: 1;
+}
+*::placeholder {
+	color: $black;
+	font-size: 14px;
+	opacity: 1;
+}
+
+
+/*--
+    - Common Classes
+-----------------------------------------*/
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+// pos relative
+.pos-relative{
+	position: relative;
+}
+
+/*--
+    - Background color
+-----------------------------------------*/
+.grey-bg {
+	background: $grey;
+}
+.white-bg {
+	background:$white;
+}
+.black-bg {
+	background: $black;
+}
+.theme-bg {
+	background: $theme-color;
+}
+.header-menu-bg {
+	background: $header-color;
+}
+.header-top-bg {
+	background: $header-top;
+}
+// .primary-bg {
+// 	background: #222;
+// }
+
+/*--
+    - color
+-----------------------------------------*/
+.white-color {
+	color: $white;
+}
+.black-color {
+	color: $black;
+}
+.theme-color {
+	color: $theme-color;
+}
+// .primary-color {
+// 	color: #222;
+// }
+
+/*--
+    - Custom Row
+-----------------------------------------*/
+.row-10 {
+    margin-left: -10px;
+    margin-right: -10px;
+    & > [class*="col"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/*--
+    - Margin & Padding
+-----------------------------------------*/
+/*-- Margin Top --*/
+@for $i from 1 through 40 {
+    .mt-#{5 * $i}{margin-top: 5px * $i;}
+}
+.mt-17{
+	margin-top: 17px;
+}
+/*-- Margin Bottom --*/
+@for $i from 1 through 40 {
+    .mb-#{5 * $i}{margin-bottom: 5px *$i;}
+}
+/*-- Margin Left --*/
+@for $i from 1 through 40 {
+    .ml-#{5 * $i}{margin-left: 5px * $i;}
+}
+
+/*-- Margin Right --*/
+@for $i from 1 through 40 {
+    .mr-#{5 * $i}{margin-right: 5px *$i;}
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through 40 {
+    .pt-#{5 * $i}{padding-top: 5px *$i;}
+}
+.pt-300{
+	padding-top: 300px;
+}
+/*-- Padding Bottom --*/
+@for $i from 1 through 40 {
+    .pb-#{5 * $i}{padding-bottom: 5px *$i;}
+}
+
+/*-- Padding Left --*/
+@for $i from 1 through 40 {
+    .pl-#{5 * $i}{padding-left: 5px *$i;}
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through 40 {
+    .pr-#{5 * $i}{padding-right: 5px *$i;}
+}
+
+.img-100{
+	width: 100%;
+}
+// button
+.btn{
+	background: $black;
+	padding: 15px 50px;
+	line-height: 1;
+	border-radius: 0;
+	color: $white;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+	&:hover{
+		background: $theme-color;
+		color: $white;
+	}
+	&-border{
+		background: transparent;
+		border: 1px solid $black;
+		color: $black;
+		&:hover{
+			background: $black;
+			color: $white;
+			border-color: $black;
+		}
+	}
+	&-soft{
+		border-color: #e9e9e9;
+		padding: 14px 30px;
+		color: $black-2;
+		background: transparent;
+		font-weight: 600;
+		&:hover{
+			background: $black;
+			color: $white;
+			border-color: $black;
+		}
+	}
+}
+
+// scrollUp
+#scrollUp {
+	background: $black;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	right: 60px;
+	bottom: 60px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	line-height: 47px;
+	&:hover{
+		background:$theme-color;
+	}
+	@media #{$xs}{
+		right:30px;
+		bottom: 20px;
+	}
+}
+
+// custom column
+.col-20{
+	width:20%;
+	@media #{$lg}{
+		width: 25%
+	}
+	@media #{$md}{
+		width: 30%
+	}
+	@media #{$xs}{
+		width: 100%
+	}
+}
+.col-40{
+	width:40%;
+	@media #{$lg}{
+		width: 50%;
+	}
+	@media #{$xs}{
+		width: 100%;
+	}
+}
+
+// section title
+.section-title{
+	& h2{
+		font-size: 24px;
+		font-weight: 700;
+		text-transform: uppercase;
+		position: relative;
+		line-height: 1;
+		padding-left: 10px;
+		&::before{
+			background: $theme-color;
+			height: 25px;
+			width: 3px;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.section-title-2{
+	& h2{
+		background: $theme-color;
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+		display: inline-block;
+		color: #fff;
+		padding: 10px 30px;
+		border-radius: 2px;
+		margin: 0;
+	}
+}
+
+// owl btn
+.gallery-active.owl-carousel .owl-nav div {
+	background: $white;
+	height: 35px;
+	left: 20px;
+	line-height: 36px;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.3s ease 0s;
+	visibility: hidden;
+	width: 35px;
+}
+.gallery-active.owl-carousel .owl-nav div.owl-next {
+	left: auto;
+	right: 20px;
+}
+.gallery-active.owl-carousel:hover .owl-nav div {
+	opacity: 1;
+	visibility: visible;
+}
+.gallery-active.owl-carousel .owl-nav div:hover {
+	background: $black;
+	color: $white;
+}
+
+
+// cta
+.app-text{
+	& h2{
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 1.1;
+		@media #{$lg}{
+			margin-bottom: 20px;
+		}
+	}
+}
+.app-store{
+	& a{
+		margin-left: 10px;
+		display: inline-block;
+		@media #{$xs}{
+			margin: 0;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+// instagram
+.instagram-item i {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: $white;
+	font-size: 35px;
+	opacity: 0;
+	z-index: 9;
+	transition: .3s;
+	transform: translateY(-50%);
+}
+.instagram-item:hover i{
+	opacity: 1;
+}
+.instagram-item a:before{
+	position: absolute;
+	background: $black;
+	content: "";
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	transition: .3s;
+	opacity: 0;
+}
+.instagram-item:hover a:before{
+	opacity: .7;
+}
+
+
+/* 13. pagination */
+.pagination {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0;
+	padding-bottom: 3px;
+	& ul{
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		& li{
+			display: inline-block;
+			margin-right: 2px;
+			margin-bottom: 10px;
+			& a, & span{
+				float: none
+			}
+			& a{
+				background: #F7F7FD;
+				font-size: 14px;
+				color: #3b3b3b;
+				font-weight: 700;
+				display: inline-block;
+				padding: 9px 18px;
+				box-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+			}
+		}
+	}
+}
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+	color: $theme-color;
+}
+
+
+// page title
+.page-title-bar{
+	& h1{
+		color: $white;
+		font-size: 40px;
+		font-weight: 700;
+		@media #{$md}{
+			font-size: 35px;
+		}
+		@media #{$xs}{
+			font-size: 32px;
+		}
+	}
+}

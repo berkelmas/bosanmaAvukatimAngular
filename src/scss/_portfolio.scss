@@ -1,0 +1,80 @@
+/* 8. Portfolio area */
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+    & img{
+        width: 100%;
+        transition: .3s;
+    }
+    &::before {
+        background: #000;
+        content: "";
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: all 0.3s ease 0s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 1;
+    }
+    & a{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: red;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: #fff;
+        text-align: center;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 9;
+        transform: translateY(-50%)
+    }
+}
+.portfolio-wrapper{
+    &:hover{
+        .portfolio-thumb{
+            &::before{
+                opacity: .85;
+                visibility: visible;
+            }
+            & img{
+                transform: scale(1.2) rotate(7deg);
+            }
+            & a{
+                opacity: 1;
+            }
+        }
+
+    }
+}
+.portfolio-wrapper {
+    position: relative;
+}
+.portfolio-menu  {
+    & > button{
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: medium none;
+        color: #3b3f42;
+        cursor: pointer;
+        font-weight: 600;
+        margin: 0 3px;
+        padding: 5px 15px;
+        text-transform: uppercase;
+        transition: all 0.3s ease 0s;
+        &:hover,&.active{
+            background:$theme-color;
+            color: $white;
+        }
+    }
+}
+.portfolio-menu > button:focus {
+  outline: 0 none;
+}
+

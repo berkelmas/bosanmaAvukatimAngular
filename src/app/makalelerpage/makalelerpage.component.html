@@ -1,0 +1,98 @@
+<!-- news area -->
+<section class="news-area pt-60 pb-60">
+    <!-- trendy news -->
+    <div class="container">
+        <div class="row">
+
+
+
+          <!-- Buraya Router Routlet Gelecek -->
+            <div class="col-xl-8 col-lg-8 col-md-12">
+              <router-outlet></router-outlet>
+            </div>
+
+
+
+
+            <div class="col-xl-4 col-lg-4 col-md-12">
+
+                <div class="widget widget-border mb-40">
+                    <h3 class="widget-title">Cezada Popüler</h3>
+
+                  <ng-container *ngFor="let popularPost of firstSixArticle; let popIndex = index;">
+                    <div *ngIf="popIndex < 4" class="post__small mb-30">
+                        <div class="post__small-thumb f-left">
+                            <a [routerLink]="['/yayinlar', popularPost.id, popularPost.makale_slug]">
+                                <img src="{{ environment.apiEndpoint + 'media/' + popularPost.image100x85 }}" alt="{{ popularPost.makale_baslik }}">
+                            </a>
+                        </div>
+                        <div class="post__small-text fix pl-10">
+                            <span class="sm-cat">
+                                <a [routerLink]="['/yayinlar', popularPost.makale_kategori_nondisplay, 'sayfa', 1]">{{ popularPost.makale_kategori }}</a>
+                            </span>
+                            <h4 class="title-13 pr-0">
+                                <a [routerLink]="['/yayinlar', popularPost.id, popularPost.makale_slug]">{{ popularPost.makale_baslik }}</a>
+                            </h4>
+                            <div class="post__small-text-meta">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>{{ popularPost.makale_yayintarihi }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                  </ng-container>
+
+
+                </div>
+
+                <div class="widget widget-border mb-40">
+                    <h3 class="widget-title">Ceza Kategorileri</h3>
+                    <ul>
+                        <li><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret </a></li>
+                        <li><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama </a></li>
+                        <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları </a></li>
+                        <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1">Uyuşturucu Madde Suçları </a></li>
+                        <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1">Beyaz Yakalı Suçları </a></li>
+                    </ul>
+                </div>
+
+
+                <div class="widget widget-border mb-40">
+                    <h3 class="widget-title">En Çok İlgi Çeken</h3>
+
+                  <ng-container *ngIf="firstSixArticle[5]">
+                    <div class="postbox">
+                        <div class="postbox__thumb">
+                            <a [routerLink]="['/yayinlar', firstSixArticle[5].id, firstSixArticle[5].makale_slug]">
+                                <img src="{{ environment.apiEndpoint + 'media/' + firstSixArticle[5].image500x287 }}" alt="{{ firstSixArticle[5].makale_baslik }}">
+                            </a>
+                        </div>
+                        <div class="postbox__text pt-15">
+                            <div class="postbox__text-meta pb-10">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>{{ firstSixArticle[5].makale_yayintarihi }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h4 class="title-16 pr-0">
+                                <a [routerLink]="['/yayinlar/', firstSixArticle[5].id, firstSixArticle[5].makale_slug ]">{{ firstSixArticle[5].makale_baslik }}</a>
+                            </h4>
+                        </div>
+                    </div>
+                  </ng-container>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- trendy news end -->
+</section>
+<!-- news area end -->

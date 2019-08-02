@@ -1,0 +1,77 @@
+
+
+  <div *ngFor="let makale of fourMakale; let iMakale = index;" class="postbox mb-40">
+      <div class="postbox__thumb mb-25">
+          <a [routerLink]="['/yayinlar/', makale.id, makale.makale_slug]">
+              <img src="{{ environment.apiEndpoint + 'media/' + makale.image625x400 }}" alt="hero image">
+          </a>
+      </div>
+      <div class="postbox__text">
+          <div class="postbox__text-meta pb-20">
+              <ul>
+                  <li>
+                      <span class="post-cat">
+                          <a [routerLink]="['/yayinlar/', makale.makale_kategori_nondisplay, 'sayfa', 1]">{{ makale.makale_kategori }}</a>
+                      </span>
+                  </li>
+                  <li>
+                      <i class="fas fa-calendar-alt"></i>
+                      <span>{{ makale.makale_yayintarihi }}</span>
+                  </li>
+              </ul>
+          </div>
+          <h4 class="title-30 font-600 pr-0">
+              <a [routerLink]="['/yayinlar/', makale.id, makale.makale_slug]">{{ makale.makale_baslik }}</a>
+          </h4>
+          <div class="desc-text mb-20">
+              <div [innerHTML]="makale.makale_mesaj | convertHtmlToText | slice:0:600"></div>
+
+          </div>
+          <a [routerLink]="['/yayinlar/', makale.id, makale.makale_slug]" class="read-more">Daha Fazlası</a>
+      </div>
+  </div>
+
+
+
+
+
+<!-- Here is pagination... -->
+
+
+<!-- Here is without category page... -->
+<div *ngIf="!kategori" class="row mt-10">
+    <div class="col-xl-12">
+        <div class="pagination">
+            <ul>
+
+              <ng-container *ngFor="let page of sayfaCountArray; let pageIndex = index;">
+                <li [class.active]="sayfa === (pageIndex + 1)">
+                    <a [routerLink]="['/yayinlar', (pageIndex + 1)]">
+                        <span>{{pageIndex + 1}}</span>
+                    </a>
+                </li>
+              </ng-container>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Here is with category page... -->
+<div *ngIf="kategori" class="row mt-10">
+    <div class="col-xl-12">
+        <div class="pagination">
+            <ul>
+              <ng-container *ngFor="let page of sayfaCountArray; let pageIndex = index;">
+                <li [class.active]="page === (pageIndex + 1)">
+                    <a [routerLink]="['/yayinlar', kategori, 'sayfa', (pageIndex + 1)]">
+                        <span>{{ pageIndex + 1 }}</span>
+                    </a>
+                </li>
+              </ng-container>
+
+            </ul>
+        </div>
+    </div>
+</div>

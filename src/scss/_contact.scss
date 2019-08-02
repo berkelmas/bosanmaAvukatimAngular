@@ -1,0 +1,70 @@
+/* 9. Contact area */
+.contact-form {
+    & h3 {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+    & input{
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border-color: currentcolor currentcolor #cccccf;
+        border-image: none;
+        border-style: none none solid;
+        border-width: 0 0 1px;
+        font-size: 13px;
+        height: 50px;
+        margin-bottom: 30px;
+        width: 100%;
+        border: 0;
+        border: 1px solid #ddd;
+        padding: 0 15px;
+    }
+    & textarea{
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border-color: currentcolor currentcolor #cccccf;
+        border-image: none;
+        border-style: none none solid;
+        border-width: 0 0 1px;
+        height: 125px;
+        margin-bottom: 30px;
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 15px;
+    }
+}
+.contact-info {
+    & span {
+    color: #646464;
+    display: block;
+    font-size: 17px;
+    margin-bottom: 10px;
+    }
+    & h2{
+        color: #414149;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+}
+.contact-meta-info  {
+    & h4{
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    & P{
+        margin-bottom: 0;
+    }
+}
+
+#contact-map{
+    height: 500px;
+}

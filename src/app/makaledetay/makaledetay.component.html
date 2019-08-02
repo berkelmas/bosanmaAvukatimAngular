@@ -1,0 +1,100 @@
+
+<ng-container *ngIf="makale">
+
+  <div class="post-details">
+      <h2 class="details-title mb-15">{{ makale.makale_baslik }}</h2>
+
+      <!-- meta -->
+      <div class="postbox__text-meta pb-30">
+          <ul>
+              <li>
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>{{ makale.makale_yayintarihi }}</span>
+              </li>
+
+          </ul>
+      </div>
+
+
+
+       <!-- post-thumb -->
+      <div class="post-thumb mb-25">
+          <img style="width: 100%;" src="{{ environment.apiEndpoint + 'media/' + makale.image625x400 }}" alt="">
+      </div>
+
+      <!-- post-content -->
+      <div class="post-content">
+        <div [innerHTML]="makale.makale_mesaj"></div>
+      </div>
+
+      <!-- content__tags -->
+      <div class="content__tags mt-30">
+          <span>Anahtar Kelimeler: </span>
+          <span class="content__tags-list">
+              <a *ngFor="let makaletag of makale.tag" href="#0">{{makaletag}}</a>
+          </span>
+      </div>
+
+
+       <!-- s-content__pagenav -->
+      <div class="s-content__pagenav mt-60">
+          <div class="s-content__nav">
+             <div class="row">
+                 <div class="col-md-6">
+                      <div class="s-content__prev mb-30">
+                          <a [routerLink]="['/yayinlar', prevNextMakaleler[4].id, prevNextMakaleler[4].makale_slug]" rel="prev">
+                              <span>ÖNCEKİ YAYIN</span>
+                               {{prevNextMakaleler[4].makale_baslik}}
+                          </a>
+                      </div>
+                 </div>
+                 <div class="col-md-6">
+                      <div *ngIf="prevNextMakaleler.length > 0" class="s-content__next mb-30 text-left text-md-right">
+                          <a [routerLink]="['/yayinlar', prevNextMakaleler[5].id, prevNextMakaleler[5].makale_slug]" rel="next">
+                              <span>SONRAKİ YAYIN</span>
+                               {{prevNextMakaleler[5].makale_baslik}}
+                          </a>
+                      </div>
+                 </div>
+             </div>
+          </div>
+      </div>
+
+       <!-- also-like -->
+      <div class="also-like mt-30">
+          <div class="section-title mb-30">
+              <h2>İLGİLİ YAYINLAR</h2>
+          </div>
+          <div class="row">
+
+            <ng-container *ngFor="let prevNext of prevNextMakaleler; let iPrevNext = index;">
+              <div *ngIf="iPrevNext < 3" class="col-lg-4 col-md-4">
+                  <div class="postbox mb-30">
+                      <div class="postbox__thumb">
+                          <a [routerLink]="['/yayinlar', prevNext && prevNext.id, prevNext && prevNext.makale_slug]">
+                              <img class="img-100" src="{{ environment.apiEndpoint + 'media/' + prevNext.image240x160 }}" alt="hero image">
+                          </a>
+                      </div>
+                      <div class="postbox__text pt-10">
+                          <div class="postbox__text-meta pb-10">
+                              <ul>
+                                  <li>
+                                      <i class="fas fa-calendar-alt"></i>
+                                      <span>{{ prevNext.makale_yayintarihi }}</span>
+                                  </li>
+
+                              </ul>
+                          </div>
+                          <h4 class="pr-0">
+                              <a [routerLink]="['/yayinlar', prevNext && prevNext.id, prevNext && prevNext.makale_slug]">{{ prevNext.makale_baslik }}</a>
+                          </h4>
+                      </div>
+                  </div>
+              </div>
+            </ng-container>
+
+          </div>
+      </div>
+  </div>
+
+</ng-container>

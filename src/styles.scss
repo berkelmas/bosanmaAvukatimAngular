@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+.no-display {
+  display: none;
+}
+
+.mean-nav {
+  background-color: #f7f7fd!important;
+}
+
+.margin-getir {
+  margin-top: 15px;
+}
+
+.mean-expand {
+
+  &:hover {
+    background-color: #f7f7fd!important;
+  }
+}
+
+.submenu-item {
+
+  &:hover {
+    background-color: red!important;
+    color: white!important;
+  }
+}

@@ -1,0 +1,414 @@
+<!-- hero-area start -->
+<section class="hero-area">
+    <div class="container">
+        <div class="row">
+
+          <ng-container *ngFor="let firstArticle of firstSixArticle; let iFirst = index">
+            <div *ngIf="iFirst === 0" class="col-lg-6 col-md-12">
+                <div class="hero pos-relative mb-30">
+                    <div class="hero__thumb" data-overlay="dark-gradient">
+                        <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]"><img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image625x400 }}" alt="{{ firstArticle.makale_baslik}}"></a>
+                    </div>
+                    <div class="hero__text">
+                        <span class="post-cat mb-10"><a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{ firstArticle.makale_kategori }}</a></span>
+                        <h3 class="pr-100"><a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{ firstArticle.makale_baslik }}</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="iFirst === 1" class="col-lg-3 col-md-6">
+                <div class="hero pos-relative mb-30">
+                    <div class="hero__thumb" data-overlay="dark-gradient">
+                        <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image297x400 }}" alt="{{ firstArticle.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="hero__text hero__text-small">
+                        <span class="post-cat mb-10">
+                            <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{ firstArticle.makale_kategori }}</a>
+                        </span>
+                        <h3 class="pr-0">
+                            <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{firstArticle.makale_baslik}}</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="iFirst === 2" class="col-lg-3 col-md-6">
+                <div class="hero pos-relative mb-30">
+                    <div class="hero__thumb" data-overlay="dark-gradient">
+                        <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + firstArticle.image297x400 }}" alt="{{ firstArticle.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="hero__text hero__text-small">
+                        <span class="post-cat mb-10">
+                            <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{ firstArticle.makale_kategori }}</a>
+                        </span>
+                        <h3 class="pr-0">
+                            <a [routerLink]="['/yayinlar/', firstArticle.id, firstArticle.makale_slug]">{{firstArticle.makale_baslik}}</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+          </ng-container>
+
+
+        </div>
+    </div>
+</section>
+<!-- hero-area end -->
+
+<!-- news area -->
+<section class="news-area pt-30 pb-30">
+    <!-- trendy news -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title mb-30">
+                    <h2>Cezada Son Yayınlar</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-10">
+            <div class="col-20">
+
+              <ng-container *ngFor="let uyusturucuItem of firstFourUyusturucumaddesuclari; let iUyusturucu = index">
+                <div *ngIf="iUyusturucu < 3" class="postbox mb-25">
+                    <div class="postbox__thumb">
+                        <a [routerLink]="['/yayinlar/', uyusturucuItem.id, uyusturucuItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + uyusturucuItem.image240x160 }}" alt="{{ uyusturucuItem.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="postbox__text pt-10">
+                        <div class="postbox__text-meta pb-10">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ uyusturucuItem.makale_yayintarihi }}</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <h4 class="pr-0">
+                            <a [routerLink]="['/yayinlar/', uyusturucuItem.id, uyusturucuItem.makale_slug]">{{ uyusturucuItem.makale_baslik }}</a>
+                        </h4>
+                    </div>
+                </div>
+              </ng-container>
+
+
+
+
+            </div>
+
+
+            <!-- 2 x 500x287 -->
+            <div class="col-40">
+
+              <ng-container *ngFor="let hakaretTwo of firstFourHakaret; let iHakaretTwo = index;">
+                <div *ngIf="iHakaretTwo < 2" class="postbox mb-25">
+                    <div class="postbox__thumb">
+                        <a [routerLink]="['/yayinlar/', hakaretTwo.id, hakaretTwo.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + hakaretTwo.image500x287 }}" alt="{{ hakaretTwo.makale_baslik }}">
+                        </a>
+                        <span class="post-cat post-absolute">
+                            <a href="#">{{ hakaretTwo.makale_kategori }}</a>
+                        </span>
+                    </div>
+                    <div class="postbox__text pt-10">
+                        <div class="postbox__text-meta pb-10">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ hakaretTwo.makale_yayintarihi }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4 class="title-16 pr-0">
+                            <a [routerLink]="['/yayinlar/', hakaretTwo.id, hakaretTwo.makale_slug]">{{ hakaretTwo.makale_baslik }}</a>
+                        </h4>
+                    </div>
+                </div>
+              </ng-container>
+
+            </div>
+
+
+            <!-- 6 x 100x85 -->
+            <div class="col-20 d-md-none d-xl-block">
+              <ng-container *ngFor="let smallItem of firstSixArticle; let iSmall = index;">
+
+                <div class="post__small mb-30">
+                    <div class="post__small-thumb f-left">
+                        <a [routerLink]="['/yayinlar/', smallItem.id, smallItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + smallItem.image100x85 }}" alt="{{ smallItem.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="post__small-text fix pl-10">
+                        <span class="sm-cat">
+                            <a href="#">{{ smallItem.makale_kategori }}</a>
+                        </span>
+                        <h4 class="title-13 pr-0">
+                            <a [routerLink]="['/yayinlar/', smallItem.id, smallItem.makale_slug]">{{ smallItem.makale_baslik }}</a>
+                        </h4>
+                        <div class="post__small-text-meta">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ smallItem.makale_yayintarihi }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </ng-container>
+
+                <div class="post-btn mb-30">
+                   <a routerLink="/yayinlar" class="btn btn-border">Tüm Yayınlar</a>
+                </div>
+
+            </div>
+
+            <!-- 3 x 240x160 makale -->
+            <div class="col-20 ">
+
+              <ng-container *ngFor="let beyazYakaliItem of firstFourBeyazyakalisuclari; let iBeyaz = index;">
+                <div *ngIf="iBeyaz < 3" class="postbox mb-25">
+                    <div class="postbox__thumb">
+                        <a [routerLink]="['/yayinlar/', beyazYakaliItem.id, beyazYakaliItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + beyazYakaliItem.image240x160 }}" alt="{{ beyazYakaliItem.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="postbox__text pt-10">
+                        <div class="postbox__text-meta pb-10">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ beyazYakaliItem.makale_yayintarihi }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4 class="pr-0">
+                            <a [routerLink]="['/yayinlar/', beyazYakaliItem.id, beyazYakaliItem.makale_slug]">{{ beyazYakaliItem.makale_baslik }}</a>
+                        </h4>
+                    </div>
+                </div>
+              </ng-container>
+
+            </div>
+        </div>
+    </div>
+    <!-- trendy news end -->
+</section>
+<!-- news area end -->
+
+
+<!-- cat news -->
+<section class="cat-area pb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="section-title mb-30">
+                    <h2>Hakaret</h2>
+                </div>
+
+
+                <ng-container *ngFor="let hakaretItem of firstFourHakaret; let hIndex = index;">
+                  <div *ngIf="hIndex === 0" class="postbox mb-25">
+                      <div class="postbox__thumb">
+                          <a [routerLink]="['/yayinlar/', hakaretItem.id, hakaretItem.makale_slug]">
+                              <img src="{{ environment.apiEndpoint + 'media/' + hakaretItem.image500x287 }}" alt="{{ hakaretItem.makale_baslik }}">
+                          </a>
+                      </div>
+                      <div class="postbox__text pt-20">
+                          <h4 class="title-18 pr-0">
+                              <a [routerLink]="['/yayinlar/', hakaretItem.id, hakaretItem.makale_slug]">{{hakaretItem.makale_baslik}}</a>
+                          </h4>
+                          <div class="postbox__text-meta pb-10">
+                              <ul>
+                                  <li>
+                                      <i class="fas fa-calendar-alt"></i>
+                                      <span>{{hakaretItem.makale_yayintarihi}}</span>
+                                  </li>
+
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                </ng-container>
+
+                <div class="cat-sm-post">
+
+                  <ng-container *ngFor="let hItemSmall of firstFourHakaret; let hIndexSmall = index;">
+                    <div *ngIf="hIndexSmall < 3 && hIndexSmall > 0" class="post__small mb-30">
+                        <div class="post__small-thumb f-left">
+                            <a [routerLink]="['/yayinlar/', hItemSmall.id, hItemSmall.makale_slug]">
+                                <img src="{{environment.apiEndpoint + 'media/' + hItemSmall.image100x85}}" alt="{{ hItemSmall.makale_baslik }}">
+                            </a>
+                        </div>
+                        <div class="post__small-text fix pl-10">
+                            <h4 class="title-16 pr-0 mt-0">
+                                <a [routerLink]="['/yayinlar/', hItemSmall.id, hItemSmall.makale_slug]">{{hItemSmall.makale_baslik}}</a>
+                            </h4>
+                            <div class="post__small-text-meta">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>{{hItemSmall.makale_yayintarihi}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                  </ng-container>
+
+                </div>
+
+
+
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="section-title mb-30">
+                    <h2>Yaralama</h2>
+                </div>
+
+              <ng-container *ngFor="let yaralamaItem of firstFourYaralama; let yIndex = index;">
+
+                <div class="postbox mb-25" *ngIf="yIndex === 0">
+                    <div class="postbox__thumb">
+                        <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image500x287 }}" alt="{{ yaralamaItem.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="postbox__text pt-20">
+                        <h4 class="title-18 pr-0">
+                            <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">{{yaralamaItem.makale_baslik}}</a>
+                        </h4>
+                        <div class="postbox__text-meta pb-10">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>01 Sep 2018</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cat-sm-post">
+
+                    <div *ngIf="yIndex > 0 && yIndex < 3" class="post__small mb-30">
+                        <div class="post__small-thumb f-left">
+                            <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">
+                                <img src="{{ environment.apiEndpoint + 'media/' + yaralamaItem.image100x85 }}" alt="{{ yaralamaItem.makale_baslik }}">
+                            </a>
+                        </div>
+                        <div class="post__small-text fix pl-10">
+                            <h4 class="title-16 pr-0 mt-0">
+                                <a [routerLink]="['/yayinlar/', yaralamaItem.id, yaralamaItem.makale_slug]">{{ yaralamaItem.makale_baslik }}</a>
+                            </h4>
+                            <div class="post__small-text-meta">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>{{ yaralamaItem.makale_yayintarihi }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+              </ng-container>
+
+
+
+
+
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 d-md-none d-lg-block">
+                <div class="section-title mb-30">
+                    <h2>Örgüt Suçları</h2>
+                </div>
+
+              <ng-container *ngFor="let orgutItem of firstFourOrgutsuclari; let iOrgut = index;">
+
+                <div *ngIf="iOrgut === 0" class="postbox mb-25">
+                    <div class="postbox__thumb">
+                        <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">
+                            <img src="{{ environment.apiEndpoint + 'media/' + orgutItem.image500x287 }}" alt="{{ orgutItem.makale_baslik }}">
+                        </a>
+                    </div>
+                    <div class="postbox__text pt-20">
+                        <h4 class="title-18 pr-0">
+                            <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">{{ orgutItem.makale_baslik }}</a>
+                        </h4>
+                        <div class="postbox__text-meta pb-10">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ orgutItem.makale_yayintarihi }}</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cat-sm-post">
+
+                  <div *ngIf="iOrgut > 0 && iOrgut < 3" class="post__small mb-30">
+                      <div class="post__small-thumb f-left">
+                          <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">
+                              <img src="{{ environment.apiEndpoint + 'media/' + orgutItem.image100x85 }}" alt="{{ orgutItem.makale_baslik }}">
+                          </a>
+                      </div>
+                      <div class="post__small-text fix pl-10">
+                          <h4 class="title-16 pr-0 mt-0">
+                              <a [routerLink]="['/yayinlar/', orgutItem.id, orgutItem.makale_slug]">{{ orgutItem.makale_baslik }}</a>
+                          </h4>
+                          <div class="post__small-text-meta">
+                              <ul>
+                                  <li>
+                                      <i class="fas fa-calendar-alt"></i>
+                                      <span>{{ orgutItem.makale_yayintarihi }}</span>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                </div>
+
+              </ng-container>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cat news end -->
+
+
+
+<section class="app-area pb-60">
+<div class="grey-bg pt-55 pb-55 pl-60 pr-60">
+  <div class="row">
+    <div class="col-xl-6 col-lg-12">
+      <div class="app-text text-center text-xl-left">
+        <h2>Bizi Cepten Takip Edin</h2>
+        <br>
+      </div>
+    </div>
+    <div class="col-xl-6 col-lg-12">
+      <div class="app-store text-center text-xl-right">
+        <img class="mr-2 mb-1" src="assets/img/store/apple.png" alt="app store uygulaması">
+        <img src="assets/img/store/google.png" alt="play store uygulaması">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
