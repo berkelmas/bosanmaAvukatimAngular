@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title mb-30">
-                    <h2>Cezada Son Yayınlar</h2>
+                    <h2>AİLE HUKUKUNDA SON YAYINLAR</h2>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="row row-10">
             <div class="col-20">
 
-              <ng-container *ngFor="let uyusturucuItem of firstFourUyusturucumaddesuclari; let iUyusturucu = index">
+              <ng-container *ngFor="let uyusturucuItem of firstFourBosanma; let iUyusturucu = index">
                 <div *ngIf="iUyusturucu < 3" class="postbox mb-25">
                     <div class="postbox__thumb">
                         <a [routerLink]="['/yayinlar/', uyusturucuItem.id, uyusturucuItem.makale_slug]">
@@ -106,7 +106,7 @@
             <!-- 2 x 500x287 -->
             <div class="col-40">
 
-              <ng-container *ngFor="let hakaretTwo of firstFourHakaret; let iHakaretTwo = index;">
+              <ng-container *ngFor="let hakaretTwo of firstFourNafaka; let iHakaretTwo = index;">
                 <div *ngIf="iHakaretTwo < 2" class="postbox mb-25">
                     <div class="postbox__thumb">
                         <a [routerLink]="['/yayinlar/', hakaretTwo.id, hakaretTwo.makale_slug]">
@@ -173,7 +173,7 @@
             <!-- 3 x 240x160 makale -->
             <div class="col-20 ">
 
-              <ng-container *ngFor="let beyazYakaliItem of firstFourBeyazyakalisuclari; let iBeyaz = index;">
+              <ng-container *ngFor="let beyazYakaliItem of firstFourVelayet; let iBeyaz = index;">
                 <div *ngIf="iBeyaz < 3" class="postbox mb-25">
                     <div class="postbox__thumb">
                         <a [routerLink]="['/yayinlar/', beyazYakaliItem.id, beyazYakaliItem.makale_slug]">
@@ -210,11 +210,11 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="section-title mb-30">
-                    <h2>Hakaret</h2>
+                    <h2>BOŞANMA</h2>
                 </div>
 
 
-                <ng-container *ngFor="let hakaretItem of firstFourHakaret; let hIndex = index;">
+                <ng-container *ngFor="let hakaretItem of firstFourBosanma; let hIndex = index;">
                   <div *ngIf="hIndex === 0" class="postbox mb-25">
                       <div class="postbox__thumb">
                           <a [routerLink]="['/yayinlar/', hakaretItem.id, hakaretItem.makale_slug]">
@@ -240,7 +240,7 @@
 
                 <div class="cat-sm-post">
 
-                  <ng-container *ngFor="let hItemSmall of firstFourHakaret; let hIndexSmall = index;">
+                  <ng-container *ngFor="let hItemSmall of firstFourBosanma; let hIndexSmall = index;">
                     <div *ngIf="hIndexSmall < 3 && hIndexSmall > 0" class="post__small mb-30">
                         <div class="post__small-thumb f-left">
                             <a [routerLink]="['/yayinlar/', hItemSmall.id, hItemSmall.makale_slug]">
@@ -271,10 +271,10 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6">
                 <div class="section-title mb-30">
-                    <h2>Yaralama</h2>
+                    <h2>ŞİDDET</h2>
                 </div>
 
-              <ng-container *ngFor="let yaralamaItem of firstFourYaralama; let yIndex = index;">
+              <ng-container *ngFor="let yaralamaItem of firstFourAileicisiddet; let yIndex = index;">
 
                 <div class="postbox mb-25" *ngIf="yIndex === 0">
                     <div class="postbox__thumb">
@@ -290,7 +290,7 @@
                             <ul>
                                 <li>
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>01 Sep 2018</span>
+                                    <span>{{ yaralamaItem.makale_yayintarihi }}</span>
                                 </li>
 
                             </ul>
@@ -332,10 +332,10 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 d-md-none d-lg-block">
                 <div class="section-title mb-30">
-                    <h2>Örgüt Suçları</h2>
+                    <h2>Mal Paylaşımı</h2>
                 </div>
 
-              <ng-container *ngFor="let orgutItem of firstFourOrgutsuclari; let iOrgut = index;">
+              <ng-container *ngFor="let orgutItem of firstFourMalpaylasimi; let iOrgut = index;">
 
                 <div *ngIf="iOrgut === 0" class="postbox mb-25">
                     <div class="postbox__thumb">

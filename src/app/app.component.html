@@ -43,7 +43,7 @@
                     <div class="col-lg-4 col-md-3 d-flex align-items-center justify-content-md-start justify-content-center">
                         <div class="header__logo text-center text-md-left mb-20">
                             <a routerLink="/">
-                                <img src="assets/img/cezaavukatim-header.png" alt="Ceza Avukatım Logo">
+                                <img src="/assets/img/bosanma-avukatim-header.png" alt="Boşanma Avukatım Logo">
                             </a>
                         </div>
                     </div>
@@ -68,16 +68,16 @@
                                 <ul>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="/">Ana Sayfa</a></li>
                                     <li routerLinkActive="active"><a routerLink="/avukata-danisin">Avukata Danışın</a></li>
-                                    <li routerLinkActive="active"><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
-                                    <li routerLinkActive="active"><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
-                                    <li routerLinkActive="active"><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/yayinlar/bosanma/sayfa/1">Boşanma</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/yayinlar/nafaka/sayfa/1">Nafaka</a></li>
+                                    <li routerLinkActive="active"><a routerLink="/yayinlar/velayet/sayfa/1">Velayet</a></li>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a (mouseenter)="desktopSubState= true" routerLink="/yayinlar">Uzmanlıklar</a>
                                         <ul (mouseleave)="desktopSubState= false" *ngIf="desktopSubState" class="submenu" style="visibility: visible; background: #f7f7fd;">
-                                          <li><a routerLink="/yayinlar/hakaret/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
-                                          <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
-                                          <li><a routerLink="/yayinlar/yaralama/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
-                                          <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Uyuşturucu Madde Suçları</a></li>
-                                          <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+                                          <li><a routerLink="/yayinlar/bosanma/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Boşanma</a></li>
+                                          <li><a routerLink="/yayinlar/nafaka/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Nafaka</a></li>
+                                          <li><a routerLink="/yayinlar/velayet/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Velayet</a></li>
+                                          <li><a routerLink="/yayinlar/aileicisiddet/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Aile İçi Şiddet</a></li>
+                                          <li><a routerLink="/yayinlar/malpaylasimi/sayfa/1" class="submenu-item" style="font-size: 16px; color: #333333;">Mal Paylaşımı</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -94,16 +94,16 @@
                               <ul>
                                   <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/" style="font-size: 16px; color: #666666;">Ana Sayfa</a></li>
                                   <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/avukata-danisin" style="font-size: 16px; color: #666666;">Avukata Danışın</a></li>
-                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/hakaret/sayfa/1" style="font-size: 16px; color: #666666;">Hakaret</a></li>
-                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/yaralama/sayfa/1" style="font-size: 16px; color: #666666;">Yaralama</a></li>
-                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/orgutsuclari/sayfa/1" style="font-size: 16px; color: #666666;">Örgüt Suçları</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/bosanma/sayfa/1" style="font-size: 16px; color: #666666;">Boşanma</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/nafaka/sayfa/1" style="font-size: 16px; color: #666666;">Nafaka</a></li>
+                                  <li><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/velayet/sayfa/1" style="font-size: 16px; color: #666666;">Velayet</a></li>
                                   <li><a (click)="changeUzmanliklarSubMenu()" style="font-size: 16px; color: #666666;">Uzmanlıklar</a>
                                       <ul class="submenu">
-                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/hakaret/sayfa/1" style="font-size: 16px; color: #333333;">Hakaret Suçları</a></li>
-                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/orgutsuclari/sayfa/1" style="font-size: 16px; color: #333333;">Örgüt Suçları</a></li>
-                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/yaralama/sayfa/1" style="font-size: 16px; color: #333333;">Yaralama Suçu</a></li>
-                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1" style="font-size: 16px; color: #333333;">Uyuşturucu Madde Suçları</a></li>
-                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/beyazyakalisuclari/sayfa/1" style="font-size: 16px; color: #333333;">Beyaz Yakalı Suçları</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/bosanma/sayfa/1" style="font-size: 16px; color: #333333;">Boşanma</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/nafaka/sayfa/1" style="font-size: 16px; color: #333333;">Nafaka</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/velayet/sayfa/1" style="font-size: 16px; color: #333333;">Velayet</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/aileicisiddet/sayfa/1" style="font-size: 16px; color: #333333;">Aile İçi Şiddet</a></li>
+                                          <li *ngIf="uzmanliklarOpened" [@mobileMenuAnimation]="'displayMobileMenu'"><a (click)="mobileMenuOpen = false; navbarMobileOpen = false;" routerLink="/yayinlar/malpaylasimi/sayfa/1" style="font-size: 16px; color: #333333;">Mal Paylaşımı</a></li>
                                       </ul>
                                   <a (click)="changeUzmanliklarSubMenu()" class="mean-expand" style="font-size: 18px; color: #666666; cursor: pointer;">+</a></li>
 
@@ -136,7 +136,7 @@
                     <div class="row">
                         <div class="col-xl-2 col-lg-12">
                             <div class="footer-logo mb-30">
-                                <a routerLink="/"><img src="assets/img/cezaavukatim-footer.png" alt="Ceza Avukatım Beyaz Logo"></a>
+                                <a routerLink="/"><img src="/assets/img/bosanma-avukatim-footer.png" alt="Boşanma Avukatım Beyaz Logo"></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-12">
@@ -167,8 +167,7 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="footer-widget mb-30">
-                            <p>Cezaavukatim.com sanık,mağdur,katılan,ihbar eden ve şikayetçi gibi tarafların aralarındaki uyuşmazlıklarda öldürme,yaralama,hakaret,bilişim,hırsızlık,
-örgüt suçları ve yasak madde kullanımı gibi ceza hukukunun uzmanlık gerektiren alanlarında size destek oluyoruz.</p>
+                            <p>bosanmavukatim.com evlilik birliği içindeki tarafların aralarındaki uyuşmazlıklarda anlaşmalı boşanma,çekişmeli boşanma,velayet,yoksulluk nafakası,tedbir nafakası,iştirak nafakası,mal rejimi(paylaşımı) gibi boşanma hukukunun uzmanlık gerektiren alanlarında size hukuki hizmet sağlıyoruz.</p>
 
                         </div>
                     </div>
@@ -179,11 +178,11 @@
                                     <div class="footer-widget mb-30">
                                         <h3>Uzmanlıklar</h3>
                                         <ul>
-                                            <li><a routerLink="/yayinlar/hakaret/sayfa/1">Hakaret</a></li>
-                                            <li><a routerLink="/yayinlar/yaralama/sayfa/1">Yaralama</a></li>
-                                            <li><a routerLink="/yayinlar/orgutsuclari/sayfa/1">Örgüt Suçları</a></li>
-                                            <li><a routerLink="/yayinlar/uyusturucumaddesuclari/sayfa/1">Uyuşturucu Madde Suçları</a></li>
-                                            <li><a routerLink="/yayinlar/beyazyakalisuclari/sayfa/1">Beyaz Yakalı Suçları</a></li>
+                                            <li><a routerLink="/yayinlar/bosanma/sayfa/1">Boşanma</a></li>
+                                            <li><a routerLink="/yayinlar/aileicisiddet/sayfa/1">Şiddet</a></li>
+                                            <li><a routerLink="/yayinlar/nafaka/sayfa/1">Nafaka</a></li>
+                                            <li><a routerLink="/yayinlar/velayet/sayfa/1">Velayet</a></li>
+                                            <li><a routerLink="/yayinlar/malpaylasimi/sayfa/1">Mal Paylaşımı</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -211,7 +210,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright text-center">
-                            <p>© Ceza Avukatım 2018. Tüm Hakları Saklıdır.</p>
+                            <p>© Boşanma Avukatım 2019. Tüm Hakları Saklıdır.</p>
                         </div>
                     </div>
                 </div>

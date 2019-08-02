@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'https://api.cezavukatim.com/'
+  apiEndpoint: 'https://api.bosanmavukatim.com/'
 };
 
 /*

@@ -12,27 +12,27 @@ import { environment } from '../../environments/environment';
 export class MainpageComponent implements OnInit {
   firstSixArticle: any;
 
-  firstFourYaralama: any;
-  firstFourBeyazyakalisuclari: any;
-  firstFourHakaret: any;
-  firstFourUyusturucumaddesuclari: any;
-  firstFourOrgutsuclari: any;
+  firstFourBosanma: any;
+  firstFourNafaka: any;
+  firstFourVelayet: any;
+  firstFourAileicisiddet: any;
+  firstFourMalpaylasimi: any;
 
   environment: {} = environment;
 
   constructor(private makalelerService: MakalelerService, private titleService: Title, private metaService: Meta) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Ceza Avukatım - Ana Sayfa');
-    this.metaService.updateTag({name: 'description', content: 'Ceza Avukatım, Ceza Hukukunda Hukuki Danışmanlık İçin Kurulmuş Bir Web Sitesidir.'})
+    this.titleService.setTitle('Boşanma Avukatım - Ana Sayfa');
+    this.metaService.updateTag({name: 'description', content: 'Boşanma Avukatım, Aile Hukukunda Hukuki Danışmanlık İçin Kurulmuş Bir Web Sayfasıdır.'})
     
     this.makalelerService.firstSixArticle.subscribe(res => this.firstSixArticle = res);
 
-    this.makalelerService.firstFourUyusturucumaddesuclari.subscribe(res => this.firstFourUyusturucumaddesuclari = res['results']);
-    this.makalelerService.firstFourBeyazyakalisuclari.subscribe(res => this.firstFourBeyazyakalisuclari = res['results']);
-    this.makalelerService.FirstFourHakaret.subscribe(res => this.firstFourHakaret = res['results']);
-    this.makalelerService.firstFourYaralama.subscribe(res => this.firstFourYaralama = res['results']);
-    this.makalelerService.firstFourOrgutsuclari.subscribe(res => this.firstFourOrgutsuclari = res['results']);
+    this.makalelerService.firstFourBosanma.subscribe(res => this.firstFourBosanma = res['results']);
+    this.makalelerService.firstFourNafaka.subscribe(res => this.firstFourNafaka = res['results']);
+    this.makalelerService.FirstFourVelayet.subscribe(res => this.firstFourVelayet = res['results']);
+    this.makalelerService.firstFourAileicisiddet.subscribe(res => this.firstFourAileicisiddet = res['results']);
+    this.makalelerService.firstFourMalpaylasimi.subscribe(res => this.firstFourMalpaylasimi = res['results']);
   }
 
 }

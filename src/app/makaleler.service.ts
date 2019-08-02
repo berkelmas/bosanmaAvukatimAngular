@@ -10,17 +10,17 @@ import { environment } from '../environments/environment';
 export class MakalelerService {
   firstSixArticle: BehaviorSubject<any> = new BehaviorSubject([]);
 
-  firstFourUyusturucumaddesuclari: BehaviorSubject<any> = new BehaviorSubject([]);
-  firstFourBeyazyakalisuclari: BehaviorSubject<any> = new BehaviorSubject([]);
-  FirstFourHakaret: BehaviorSubject<any> = new BehaviorSubject([]);
-  firstFourYaralama: BehaviorSubject<any> = new BehaviorSubject([]);
-  firstFourOrgutsuclari: BehaviorSubject<any> = new BehaviorSubject([]);
+  firstFourBosanma: BehaviorSubject<any> = new BehaviorSubject([]);
+  firstFourNafaka: BehaviorSubject<any> = new BehaviorSubject([]);
+  FirstFourVelayet: BehaviorSubject<any> = new BehaviorSubject([]);
+  firstFourAileicisiddet: BehaviorSubject<any> = new BehaviorSubject([]);
+  firstFourMalpaylasimi: BehaviorSubject<any> = new BehaviorSubject([]);
 
-  kategoriHakaret: string = 'hakaret';
-  kategoriYaralama: string = 'yaralama';
-  kategoriOrgutsuclari: string = 'orgutsuclari';
-  kategoriUyusturucumaddesuclari: string = 'uyusturucumaddesuclari';
-  kategoriBeyazyakalisuclari: string = 'beyazyakalisuclari';
+  kategoriBosanma: string = 'bosanma';
+  kategoriNafaka: string = 'nafaka';
+  kategoriVelayet: string = 'velayet';
+  kategoriAileicisiddet: string = 'aileicisiddet';
+  kategoriMalpaylasimi: string = 'malpaylasimi';
 
   constructor(private http: HttpClient) {}
 
@@ -33,20 +33,20 @@ export class MakalelerService {
       return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/`);
     } else if (kategori !== '' && page === 1) {
       switch(true) {
-        case (kategori === this.kategoriHakaret):
-          return this.FirstFourHakaret;
+        case (kategori === this.kategoriBosanma):
+          return this.firstFourBosanma;
 
-        case (kategori === this.kategoriYaralama):
-          return this.firstFourYaralama;
+        case (kategori === this.kategoriNafaka):
+          return this.firstFourNafaka;
 
-        case (kategori === this.kategoriOrgutsuclari):
-          return this.firstFourOrgutsuclari;
+        case (kategori === this.kategoriVelayet):
+          return this.FirstFourVelayet;
 
-        case (kategori === this.kategoriUyusturucumaddesuclari):
-          return this.firstFourUyusturucumaddesuclari;
+        case (kategori === this.kategoriAileicisiddet):
+          return this.firstFourAileicisiddet;
 
-        case (kategori === this.kategoriBeyazyakalisuclari):
-          return this.firstFourBeyazyakalisuclari;
+        case (kategori === this.kategoriMalpaylasimi):
+          return this.firstFourMalpaylasimi;
 
       }
     } else if (kategori !== '' && page !== 1) {
@@ -62,24 +62,24 @@ export class MakalelerService {
     return this.http.get(`${environment.apiEndpoint}mainpagenocontent/`);
   }
 
-  getFirstFourUyusturucumaddesuclari() {
-    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriUyusturucumaddesuclari}`);
+  getFirstFourBosanma() {
+    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriBosanma}`);
   }
 
-  getFirstFourBeyazyakalisuclari() {
-    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriBeyazyakalisuclari}`);
+  getFirstFourNafaka() {
+    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriNafaka}`);
   }
 
-  getFirstFourHakaret() {
-    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriHakaret}`);
+  getFirstFourVelayet() {
+    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriVelayet}`);
   }
 
-  getFirstFourYaralama() {
-    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriYaralama}`);
+  getFirstFourAileicisiddet() {
+    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriAileicisiddet}`);
   }
 
-  getFirstFourOrgutsuclari() {
-    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriOrgutsuclari}`);
+  getFirstFourMalpaylasimi() {
+    return this.http.get(`${environment.apiEndpoint}kategorimakalefilter/?kategori=${this.kategoriMalpaylasimi}`);
   }
 
 }

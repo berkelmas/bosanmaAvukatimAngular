@@ -20,7 +20,7 @@ const app = express();
 
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
 
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 4650;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template

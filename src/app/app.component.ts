@@ -66,20 +66,20 @@ export class AppComponent implements OnInit {
     this.makalelerService.getFirstSixArticle()
       .subscribe(res => this.makalelerService.firstSixArticle.next(res['results']) );
 
-    this.makalelerService.getFirstFourUyusturucumaddesuclari()
-    .subscribe(res => this.makalelerService.firstFourUyusturucumaddesuclari.next(res));
+    this.makalelerService.getFirstFourBosanma()
+    .subscribe(res => this.makalelerService.firstFourBosanma.next(res));
 
-    this.makalelerService.getFirstFourBeyazyakalisuclari()
-      .subscribe(res => this.makalelerService.firstFourBeyazyakalisuclari.next(res));
+    this.makalelerService.getFirstFourNafaka()
+      .subscribe(res => this.makalelerService.firstFourNafaka.next(res));
 
-    this.makalelerService.getFirstFourHakaret()
-      .subscribe(res => this.makalelerService.FirstFourHakaret.next(res));
+    this.makalelerService.getFirstFourVelayet()
+      .subscribe(res => this.makalelerService.FirstFourVelayet.next(res));
 
-    this.makalelerService.getFirstFourYaralama()
-      .subscribe(res => this.makalelerService.firstFourYaralama.next(res));
+    this.makalelerService.getFirstFourAileicisiddet()
+      .subscribe(res => this.makalelerService.firstFourAileicisiddet.next(res));
 
-    this.makalelerService.getFirstFourOrgutsuclari()
-      .subscribe(res => this.makalelerService.firstFourOrgutsuclari.next(res));
+    this.makalelerService.getFirstFourMalpaylasimi()
+      .subscribe(res => this.makalelerService.firstFourMalpaylasimi.next(res));
   }
 
 
