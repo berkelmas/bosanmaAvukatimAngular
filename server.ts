@@ -52,6 +52,6 @@ app.get('*', (req, res) => {
 });
 
 // Start up the Node server
-app.listen(PORT, () => {
-  console.log(`Node server listening on http://localhost:${PORT}`);
+app.listen(4650, () => {
+  console.log(`Node server listening on http://localhost:4650`);
 });
